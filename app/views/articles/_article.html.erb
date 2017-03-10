@@ -14,7 +14,7 @@
           </div>
         </div>
 
-        <% if logged_in? && current_user == data.user %>
+        <% if logged_in? && (current_user == data.user || current_user.admin?) %>
           <div class="article-actions">
             <%= link_to "Edit ths article", edit_article_path(data), class: "btn btn-xs btn-primary" %>
             <%= link_to "Delete this article", article_path(data), method: :delete,
