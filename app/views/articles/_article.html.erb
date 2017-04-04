@@ -14,6 +14,10 @@
           </div>
         </div>
 
+        <% if data.categories.any? %>
+          <p>Categories: <%= render data.categories %> </p>
+        <% end %>
+
         <% if logged_in? && (current_user == data.user || current_user.admin?) %>
           <div class="article-actions">
             <%= link_to "Edit ths article", edit_article_path(data), class: "btn btn-xs btn-primary" %>
